@@ -3,7 +3,7 @@
     "host": "0.0.0.0:4501",
     "tls": {
       "host": "0.0.0.0:4500",
-      "enable": false,
+      "enable": true,
       "key": "misc/key.pem",
       "cert": "misc/cert.pem"
     }
