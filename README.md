@@ -21,6 +21,14 @@ sudo nginx -t
 sudo systemctl restart nginx
 ```
 
+## Running
+
+```sh
+node src/stream.js
+node src/fsread.js
+node src/fscache.js
+```
+
 ## Environment
 
 - OS: Ubuntu 22.04.1 LTS x86_64

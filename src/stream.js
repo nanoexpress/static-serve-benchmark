@@ -4,9 +4,9 @@ import { createReadStream } from "fs";
 import { stat } from "fs/promises";
 import { sendFile } from "./helpers/send-file.js";
 
-const port = Number(process.env.PORT || 443);
+const port = 4000;
 
-console.log('PID', process.pid);
+console.log("PID", process.pid);
 
 const app = uWS
   .SSLApp({
