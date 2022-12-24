@@ -6,7 +6,7 @@ export default {
   fetch(req) {
     const url = new URL(req.url);
     const { pathname } = url;
-    const _file = pathname === "/" ? "/index.html" : pathname.substring(1);
+    const _file = pathname === "/" ? "index.html" : pathname.substring(1);
     const filePath = `./static/${_file}`;
 
     return new Response(file(filePath));
