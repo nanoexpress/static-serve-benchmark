@@ -43,9 +43,9 @@ Benchmark command: `wrk https://localhost:{PORT} -d3 -c10 -t1`
 
 > All requests was encrypted via TLSv1.3
 
-| Port   | Caller           | Result          |
-| ------ | ---------------- | --------------- |
-| `4000` | `src/stream.js`  | 6,867 req/sec   |
-| `4100` | `src/fsread.js`  | 8,580 req/sec   |
-| `4200` | `src/fscache.js` | 113,280 req/sec |
-| `4300` | nginx/v1.18      | 68,731 req/sec  |
+| Port   | Caller           | Result          | RAM usage |
+| ------ | ---------------- | --------------- | --------- |
+| `4000` | `src/stream.js`  | 6,867 req/sec   | 5 MB      |
+| `4100` | `src/fsread.js`  | 8,580 req/sec   | 6 MB      |
+| `4200` | `src/fscache.js` | 113,280 req/sec | 15 MB     |
+| `4300` | nginx/v1.18      | 68,731 req/sec  | ~5 MB     |
