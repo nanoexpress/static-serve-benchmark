@@ -5,7 +5,7 @@
 this step for Ubuntu only
 
 ```sh
-git clone ... ~/Downloads/ssb
+git clone https://github.com/nanoexpress/static-serve-benchmark.git ~/Downloads/ssb
 cd ~/Downloads/ssb
 npm install
 sudo apt install nginx -y
