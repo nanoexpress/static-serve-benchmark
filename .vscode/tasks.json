@@ -1,0 +1,92 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Cached FS Script",
+      "type": "shell",
+      "command": "nodemon src/fscache.js",
+      "runOptions": {
+        "runOn": "folderOpen",
+        "reevaluateOnRerun": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "FS Script",
+      "type": "shell",
+      "command": "nodemon src/fsread.js",
+      "runOptions": {
+        "runOn": "folderOpen",
+        "reevaluateOnRerun": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Stream Script",
+      "type": "shell",
+      "command": "nodemon src/stream.js",
+      "runOptions": {
+        "runOn": "folderOpen",
+        "reevaluateOnRerun": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Bun Script",
+      "type": "shell",
+      "command": "bun run --hot src/bun.js",
+      "runOptions": {
+        "runOn": "folderOpen",
+        "reevaluateOnRerun": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "binserve serve",
+      "type": "shell",
+      "command": "binserve",
+      "runOptions": {
+        "runOn": "folderOpen",
+        "reevaluateOnRerun": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    }
+  ]
+}

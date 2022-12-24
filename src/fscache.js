@@ -10,7 +10,7 @@ const cache = {};
 console.log("PID", process.pid);
 
 const app = uWS
-  .SSLApp({
+  .App({
     key_file_name: path.resolve("misc/key.pem"),
     cert_file_name: path.resolve("misc/cert.pem"),
     passphrase: "1234",
@@ -25,7 +25,9 @@ const app = uWS
 
       cache[filePath] = cache[filePath] || (await readFile(filePath));
 
-      return res.end(cache[filePath]);
+      res.cork(() => {
+        res.end(cache[filePath]);
+      });
     } catch {
       return "Not found";
     }

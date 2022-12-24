@@ -1,0 +1,26 @@
+{
+  "server": {
+    "host": "0.0.0.0:4501",
+    "tls": {
+      "host": "0.0.0.0:4500",
+      "enable": false,
+      "key": "misc/key.pem",
+      "cert": "misc/cert.pem"
+    }
+  },
+  "routes": {
+    "/": "static/"
+  },
+  "static": {
+    "directory": "static",
+    "served_from": "/static"
+  },
+  "config": {
+    "enable_hot_reload": false,
+    "fast_mem_cache": true,
+    "enable_cache_control": false,
+    "enable_directory_listing": false,
+    "follow_symlinks": false,
+    "enable_logging": false
+  }
+}

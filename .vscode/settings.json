@@ -1,3 +1,10 @@
 {
-  "prettier.requireConfig": false
+  "prettier.requireConfig": false,
+  "task.allowAutomaticTasks": "on",
+  "task.autoDetect": "on",
+  "remote.autoForwardPorts": true,
+  "remote.autoForwardPortsSource": "process",
+  "remote.restoreForwardedPorts": true,
+  "remote.downloadExtensionsLocally": true,
+  "remote.localPortHost": "localhost"
 }

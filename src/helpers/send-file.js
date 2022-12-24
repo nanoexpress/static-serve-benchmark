@@ -7,14 +7,6 @@ export const sendFile = (res, stream, size) => {
     aborted = true;
   });
 
-  const onclose = () => {
-    done = true;
-    streaming = false;
-  };
-  const onfinish = () => {
-    console.log("finish");
-  };
-
   stream.on("data", (buffer) => {
     if (done || aborted) {
       return;
@@ -49,13 +41,6 @@ export const sendFile = (res, stream, size) => {
       });
     }
   });
-  stream
-    .on("error", (error) => {
-      stream.destroy(error);
-      aborted = true;
-    })
-    .on("close", onclose)
-    .on("finish", onfinish);
 
   return res;
 };

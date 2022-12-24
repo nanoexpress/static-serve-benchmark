@@ -5,6 +5,7 @@ import { stat } from "fs/promises";
 import { sendFile } from "./helpers/send-file.js";
 
 const port = 4000;
+const sizeCache = {};
 
 console.log("PID", process.pid);
 
@@ -20,9 +21,12 @@ const app = uWS
       const url = req.getUrl();
       const file = url === "/" ? "/index.html" : url;
       const filePath = path.join("./static", file);
-      const { size } = await stat(filePath);
+      sizeCache[filePath] = sizeCache[filePath] || (await stat(filePath));
+      const { size } = sizeCache[filePath];
 
-      sendFile(res, createReadStream(filePath), size);
+      res.cork(() => {
+        sendFile(res, createReadStream(filePath), size);
+      });
       return res;
     } catch {
       return "Not found";

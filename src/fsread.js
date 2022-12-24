@@ -24,7 +24,9 @@ const app = uWS
 
       const content = await readFile(filePath);
 
-      return res.end(content);
+      res.cork(() => {
+        res.end(content);
+      });
     } catch {
       return "Not found";
     }

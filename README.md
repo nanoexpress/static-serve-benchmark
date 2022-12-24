@@ -56,4 +56,6 @@ Benchmark command: `wrk https://localhost:{PORT} -d3 -c10 -t1`
 | `4000` | `src/stream.js`  | 6,867 req/sec   | 5 MB      |
 | `4100` | `src/fsread.js`  | 8,580 req/sec   | 6 MB      |
 | `4200` | `src/fscache.js` | 113,280 req/sec | 15 MB     |
-| `4300` | nginx/v1.18      | 68,731 req/sec  | ~5 MB     |
+| `4300` | nginx/v1.18      | 68,731 req/sec  | ~4 MB     |
+| `4400` | `src/bun.js`     | -               | -         |
+| `4500` | binserve         | 80,300 req/sec  | ~2 MB     |
