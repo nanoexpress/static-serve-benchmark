@@ -1,0 +1,16 @@
+{
+	debug
+	admin off
+}
+
+localhost:4600 {
+	root * ./static
+	try_files {path} /index.html
+	file_server
+}
+
+http://localhost:4601 {
+	root * ./static
+	try_files {path} /index.html
+	file_server
+}

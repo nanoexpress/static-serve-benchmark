@@ -1,11 +1,9 @@
 import uWS from "uWebSockets.js";
 import path from "path";
-import { createReadStream } from "fs";
-import { stat } from "fs/promises";
-import { sendFile } from "./helpers/send-file.js";
+import BufferFromFile from "bufferfromfile";
 
-const port = 4000;
-const sizeCache = {};
+const port = 4700;
+const cache = {};
 
 console.log("PID", process.pid);
 
@@ -17,15 +15,18 @@ const app = uWS
   })
   .get("/*", async (res, req) => {
     res.onAborted(() => {});
+
     try {
       const url = req.getUrl();
       const file = url === "/" ? "/index.html" : url;
       const filePath = path.join("./static", file);
-      sizeCache[filePath] = sizeCache[filePath] || (await stat(filePath));
-      const { size } = sizeCache[filePath];
 
-      sendFile(res, createReadStream(filePath), size);
-      return res;
+      cache[filePath] =
+        cache[filePath] || BufferFromFile(filePath).Uint8Array();
+
+      res.cork(() => {
+        res.end(cache[filePath]);
+      });
     } catch {
       return "Not found";
     }

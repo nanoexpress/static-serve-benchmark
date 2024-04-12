@@ -53,9 +53,11 @@ Benchmark command: `wrk https://localhost:{PORT} -d3 -c10 -t1`
 
 | Port   | Caller           | Result          | RAM usage |
 | ------ | ---------------- | --------------- | --------- |
-| `4000` | `src/stream.js`  | 6,867 req/sec   | 5 MB      |
-| `4100` | `src/fsread.js`  | 8,580 req/sec   | 6 MB      |
-| `4200` | `src/fscache.js` | 113,280 req/sec | 15 MB     |
+| `4000` | `src/stream.js`  | 12,692 req/sec  | ~26.3 MB  |
+| `4100` | `src/fsread.js`  | 34,779 req/sec  | ~39.9 MB  |
+| `4200` | `src/fscache.js` | 114,951 req/sec | ~23.9 MB  |
 | `4300` | nginx/v1.18      | 68,731 req/sec  | ~4 MB     |
-| `4400` | `src/bun.js`     | -               | -         |
-| `4500` | binserve         | 80,300 req/sec  | ~2 MB     |
+| `4400` | `src/bun.js`     | 77,181 req/sec  | ~18.7 MB  |
+| `4500` | binserve         | 107,526 req/sec | ~5.7 MB   |
+| `4600` | caddy            | 9,918 req/sec   | ~23 MB    |
+| `4700` | `src/zccache.js` | 115,000 req/sec | ~24.4 MB  |

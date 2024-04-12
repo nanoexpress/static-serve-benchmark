@@ -6,7 +6,7 @@
     {
       "label": "Cached FS Script",
       "type": "shell",
-      "command": "nodemon src/fscache.js",
+      "command": "node --watch src/fscache.js",
       "runOptions": {
         "runOn": "folderOpen",
         "reevaluateOnRerun": true
@@ -23,7 +23,7 @@
     {
       "label": "FS Script",
       "type": "shell",
-      "command": "nodemon src/fsread.js",
+      "command": "node --watch src/fsread.js",
       "runOptions": {
         "runOn": "folderOpen",
         "reevaluateOnRerun": true
@@ -40,7 +40,24 @@
     {
       "label": "Stream Script",
       "type": "shell",
-      "command": "nodemon src/stream.js",
+      "command": "node --watch src/stream.js",
+      "runOptions": {
+        "runOn": "folderOpen",
+        "reevaluateOnRerun": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Zero-copy buffer cache Script",
+      "type": "shell",
+      "command": "node --watch src/zccache.js",
       "runOptions": {
         "runOn": "folderOpen",
         "reevaluateOnRerun": true
@@ -75,6 +92,23 @@
       "label": "binserve serve",
       "type": "shell",
       "command": "binserve",
+      "runOptions": {
+        "runOn": "folderOpen",
+        "reevaluateOnRerun": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "caddy serve",
+      "type": "shell",
+      "command": "caddy run",
       "runOptions": {
         "runOn": "folderOpen",
         "reevaluateOnRerun": true

@@ -6,5 +6,8 @@
   "remote.autoForwardPortsSource": "process",
   "remote.restoreForwardedPorts": true,
   "remote.downloadExtensionsLocally": true,
-  "remote.localPortHost": "localhost"
+  "remote.localPortHost": "localhost",
+  "files.readonlyExclude": {
+    "**/node_modules/**": true
+  }
 }

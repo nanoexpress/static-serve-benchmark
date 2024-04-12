@@ -8,6 +8,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "uWebSockets.js": "uNetworking/uWebSockets.js#v20.15.0"
+    "bufferfromfile": "^0.4.377",
+    "uWebSockets.js": "uNetworking/uWebSockets.js#v20.43.0"
   }
 }

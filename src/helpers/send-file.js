@@ -16,30 +16,32 @@ export const sendFile = (res, stream, size) => {
       buffer.byteOffset + buffer.byteLength
     );
 
-    const lastOffset = res.getWriteOffset();
-    const [ok, _done] = res.tryEnd(buffer, size);
+    res.cork(() => {
+      const lastOffset = res.getWriteOffset();
+      const [ok, _done] = res.tryEnd(buffer, size);
 
-    if (_done) {
-      done = true;
-    } else if (!ok) {
-      stream.pause();
+      if (_done) {
+        done = true;
+      } else if (!ok) {
+        stream.pause();
 
-      res.onWritable((offset) => {
-        if (done || aborted) {
-          return true;
-        }
-        const [writeOk, writeDone] = res.tryEnd(
-          buffer.slice(offset - lastOffset),
-          size
-        );
-        if (writeDone) {
-          done = true;
-        } else if (writeOk) {
-          stream.resume();
-        }
-        return writeOk;
-      });
-    }
+        res.onWritable((offset) => {
+          if (done || aborted) {
+            return true;
+          }
+          const [writeOk, writeDone] = res.tryEnd(
+            buffer.slice(offset - lastOffset),
+            size
+          );
+          if (writeDone) {
+            done = true;
+          } else if (writeOk) {
+            stream.resume();
+          }
+          return writeOk;
+        });
+      }
+    });
   });
 
   return res;
