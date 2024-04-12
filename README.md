@@ -31,10 +31,7 @@ node src/fscache.js
 
 ## Environment
 
-- OS: Ubuntu 22.04.1 LTS x86_64
-- CPU: i9-9900K (4-core dedicated VM)
-- RAM: 8GB DDR4
-- Disk: SSD NVMe 64GB
+Macbook Pro M1 2020 16GB/512GB running on machine without any Docker or other containers
 
 ## Common bug-fixes
 
