@@ -9,6 +9,6 @@
   "license": "ISC",
   "dependencies": {
     "bufferfromfile": "^0.4.377",
-    "uWebSockets.js": "uNetworking/uWebSockets.js#v20.43.0"
+    "uWebSockets.js": "uNetworking/uWebSockets.js#v20.61.0"
   }
 }
