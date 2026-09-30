@@ -2,3 +2,4 @@ node_modules
 minica*
 caddy
 binserve
+.DS_Store
