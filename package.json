@@ -9,7 +9,7 @@
 	"author": "",
 	"license": "ISC",
 	"scripts": {
-		"lint": "biome check . && rumdl check .",
+		"lint": "biome check . && oxlint . && rumdl check .",
 		"format": "biome check --write . && rumdl fmt .",
 		"serve:zccache": "node src/zccache.js",
 		"serve:fscache": "node src/fscache.js",
@@ -25,6 +25,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.15",
 		"lefthook": "^2.1.15",
+		"oxlint": "^1.86.0",
 		"rumdl": "^0.2.78"
 	}
 }
