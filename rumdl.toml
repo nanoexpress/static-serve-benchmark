@@ -1,2 +1,5 @@
 # Markdown lint/format
 # https://rumdl.dev/configuration
+
+# Long lines in tables/prose are intentional
+disable = ["MD013"]
