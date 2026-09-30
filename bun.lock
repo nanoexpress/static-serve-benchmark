@@ -6,7 +6,7 @@
       "name": "http3",
       "dependencies": {
         "bufferfromfile": "^0.4.377",
-        "uWebSockets.js": "uNetworking/uWebSockets.js#v20.61.0",
+        "uWebSockets.js": "uNetworking/uWebSockets.js#v20.70.0",
       },
     },
   },
@@ -189,7 +189,7 @@
 
     "tr46": ["tr46@0.0.3", "", {}, "sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw=="],
 
-    "uWebSockets.js": ["uWebSockets.js@github:uNetworking/uWebSockets.js#cf2e4a8", {}, "uNetworking-uWebSockets.js-cf2e4a8", "sha512-VVkXVJk3NcIZUCuEDCjag5ql7l9Ei7bm7txpD9bBVB4ah1qQYT1lTcJNyV1Sc4rGrq3zhXJHNOKQt3/HouyFMw=="],
+    "uWebSockets.js": ["uWebSockets.js@github:uNetworking/uWebSockets.js#b1092c7", {}, "uNetworking-uWebSockets.js-b1092c7", "sha512-ft7+SY00mttQC2sN9lhVYz6UCJNm+8D8V0zfGFnhG9YmPWcB8sQxJctDyhqcIuzzmzpl2ee+/QV4/jyJE3KscA=="],
 
     "unique-filename": ["unique-filename@2.0.1", "", { "dependencies": { "unique-slug": "^3.0.0" } }, "sha512-ODWHtkkdx3IAR+veKxFV+VBkUMcN+FaqzUUd7IZzt+0zhDZFPFxhlqwPF3YQvMHx1TD0tdgYl+kuPnJ8E6ql7A=="],
 
