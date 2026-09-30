@@ -11,10 +11,7 @@ export const sendFile = (res, stream, size) => {
 		if (done || aborted) {
 			return;
 		}
-		buffer = buffer.buffer.slice(
-			buffer.byteOffset,
-			buffer.byteOffset + buffer.byteLength,
-		);
+		buffer = buffer.subarray();
 
 		res.cork(() => {
 			const lastOffset = res.getWriteOffset();
