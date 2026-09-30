@@ -18,6 +18,9 @@ const app = uWS
 
 		try {
 			const url = req.getUrl();
+			if (url.indexOf("..") !== -1) {
+				return "Not found";
+			}
 			const file = url === "/" ? "/index.html" : url;
 			const filePath = path.join("./static", file);
 

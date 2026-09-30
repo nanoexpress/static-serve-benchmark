@@ -19,6 +19,9 @@ const app = uWS
 		res.onAborted(() => {});
 		try {
 			const url = req.getUrl();
+			if (url.indexOf("..") !== -1) {
+				return "Not found";
+			}
 			const file = url === "/" ? "/index.html" : url;
 			const filePath = path.join("./static", file);
 			sizeCache[filePath] = sizeCache[filePath] || (await stat(filePath));
