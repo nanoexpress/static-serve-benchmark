@@ -7,7 +7,7 @@ const cache = {};
 
 console.log("PID", process.pid);
 
-const _app = uWS
+const app = uWS
 	.SSLApp({
 		key_file_name: path.resolve("misc/key.pem"),
 		cert_file_name: path.resolve("misc/cert.pem"),
