@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "packageManager": "bun@1.4.2",
   "keywords": [],
   "author": "",
   "license": "ISC",
