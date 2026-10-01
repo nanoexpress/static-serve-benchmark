@@ -1,0 +1,10 @@
+# typos spell-check config
+# https://github.com/crate-ci/typos
+
+[files]
+# vendored React build, not our wording
+extend-exclude = ["static/react.dev.js"]
+
+[default.extend-words]
+# `wrk` is the HTTP benchmarking tool, not a typo of `work`
+wrk = "wrk"
