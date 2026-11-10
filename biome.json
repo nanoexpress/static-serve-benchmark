@@ -1,12 +1,30 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.5.15/schema.json",
+	"$schema": "https://biomejs.dev/schemas/latest/schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
 		"useIgnoreFile": true
 	},
 	"files": {
-		"includes": ["**", "!static", "!.vscode"]
+		"includes": [
+			"**",
+			"!static",
+			"!.vscode",
+			"!**/cjs",
+			"!**/esm",
+			"!**/typings",
+			"!**/dist",
+			"!**/coverage",
+			"!**/bench.tmp.mjs"
+		]
+	},
+	"markdown": {
+		"formatter": { "enabled": false },
+		"linter": { "enabled": false }
+	},
+	"yaml": {
+		"formatter": { "enabled": false },
+		"linter": { "enabled": false }
 	},
 	"linter": {
 		"rules": {
